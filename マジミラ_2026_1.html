@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>マジミラ2026 シャッターチャンス</title>
+
+  <link rel="stylesheet" href="マジミラ_2026_1.css">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/textalive-app-api/dist/index.js"></script>
+  <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+
+<body>
+  <!-- 背景 -->
+  <div id="background"></div>
+
+  <!-- 軌跡描画 -->
+  <canvas id="trailCanvas"></canvas>
+
+  <!-- ゲームエリア -->
+  <div id="gameArea">
+    <!-- 歌詞表示 -->
+    <div id="lyricsContainer"></div>
+    <!-- ミク・リン -->
+    <img id="mikuRin" src="../images/ミク・リン.png" alt="miku-rin">
+    <!-- カメラ -->
+    <img id="camera" src="../images/カメラ.png" alt="camera">
+    <!-- フラッシュ -->
+    <img id="flash" src="../images/フラッシュ.png" alt="flash">
+    <!-- ハート -->
+    <img id="heart" src="../images/ハート.png" alt="heart">
+    <!-- 撮影枚数 -->
+    <div id="counter">0枚</div>
+  </div>
+
+  <!-- 楽曲情報 -->
+  <div id="songInfo">
+    <div id="songTitle"></div>
+    <div id="songArtist"></div>
+  </div>
+
+  <!-- オーバーレイ -->
+  <div id="overlay">
+    <div id="overlayText">now loading...</div>
+  </div>
+
+  <!-- ヘッダ -->
+  <div id="header">
+    <!-- 再生コントロール / Playback control -->
+    <div id="control" class="far">
+      <a href="#" id="play" class="disabled">❎️</a>
+      <a href="#" id="stop" class="disabled">❎️</a>
+    </div>
+  </div>
+
+  
+  <!-- media -->
+  <div id="media"></div>
+
+  <!-- 終了画面 -->
+  <div id="endScreen">
+    <div id="endPanel">
+      <div id="pictureNumber">撮影枚数 : <span id="resultCount">0枚</span></div>
+      <div id="endTitle"> Thank you for playing!</div>
+      <button id="reloadButton">▶ Replay</button>
+    </div>
+  </div>
+
+  <!-- 歌詞 -->
+  <div id="lyrics">
+    <div id="text"></div>
+    <div id="bar"></div>
+  </div>
+
+  <!-- シークバー -->
+  <div id="seekbar">
+    <div id="seek"></div>
+  </div>
+
+  <script src="マジミラ_2026_2.js"></script>
+
+</body>
+</html>
