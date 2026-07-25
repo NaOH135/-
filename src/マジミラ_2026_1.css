@@ -1,0 +1,290 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+  background: black;
+  a {text-decoration: none;}
+}
+
+
+/* =========================
+   背景
+========================= */
+
+#background {
+  position: fixed;
+  inset: 0;
+  background-image: url("../images/背景_1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* =========================
+   軌跡
+========================= */
+#trailCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* =========================
+   ゲームエリア
+========================= */
+#gameArea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* =========================
+   歌詞
+========================= */
+#lyricsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.lyric {
+  position: absolute;
+  white-space: nowrap;
+  color: white;
+  font-weight: bold;
+  font-size: clamp(24px,3vw,48px);
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* 名詞 */
+.noun {
+  background:linear-gradient(
+      90deg,
+      #66ddff 0%,
+      #ffffff 50%,
+      #ffe84f 100%
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: rgba(0,0,0,0.7);
+  -webkit-text-stroke-width: 1px;
+  background-clip: text;
+  filter:drop-shadow(
+      0 0 6px rgba(16, 15, 15, 0.5)
+    );
+}
+
+/* =========================
+   ミク・リン
+========================= */
+#mikuRin {
+  position: absolute;
+  width: min(40vw, 90px);
+  display: none;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* =========================
+   カメラ
+========================= */
+#camera {
+  position: absolute;
+  width: min(20vw, 70px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* =========================
+   フラッシュ
+========================= */
+#flash {
+  position: absolute;
+  width: min(8vw, 30px);
+  left:10%;
+  right:10%;
+  display: none;
+  pointer-events: none;
+  z-index: 30;
+}
+
+/* =========================
+   ハート
+========================= */
+#heart {
+  position: absolute;
+  width: min(8vw, 50px);
+  display: none;
+  pointer-events: none;
+  z-index: 40;
+}
+
+/* =========================
+   撮影枚数
+========================= */
+#counter {
+  position:fixed;
+  right: 0.8%;
+  bottom: 1%;
+  background:linear-gradient(
+      135deg,
+      #8c00ff,
+      #7b61ffe2
+    );
+  color: white;
+  border: 2px solid white;
+  font-size: 40px;
+  font-weight: 900;
+  text-shadow: 0 0 5px white;
+}
+
+/* =========================
+   楽曲情報
+========================= */
+#songInfo {
+  background-color: rgb(4, 140, 42);
+  border: 4px solid white;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  text-align: right;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 8px rgb(0, 0, 0);
+  z-index: 60;
+}
+
+#songTitle {
+  font-size: clamp(20px, 1.5vw, 32px);
+  font-weight: bold;
+}
+
+#songArtist {
+  margin-top: 5px;
+  font-size: clamp(14px, 1vw, 20px );
+}
+
+/* =========================
+   ヘッダ
+========================= */
+#header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 70;
+}
+
+#control {
+  font-size:clamp(20px, 2.5vw, 50px);
+  display: flex;
+  gap: 10px;
+}
+
+
+/* =========================
+   ローディング
+========================= */
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:  rgba(0, 0, 0, 0.8 );
+  color: white;
+  z-index: 100;
+  touch-action: none;
+}
+
+#overlayText {
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   終了画面
+========================= */
+#endScreen {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba( 0, 0, 0, 0.75 );
+  z-index: 200;
+}
+
+#endPanel {
+  text-align: center;
+  color: white;
+}
+
+#pictureNumber {
+  margin-bottom: 15px;
+  font-size: clamp(28px, 5vw, 180px );
+}
+
+#endTitle {
+  margin-bottom: 15px;
+  font-size: clamp(28px, 5vw, 180px);
+}
+
+#reloadButton {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: clamp( 20px, 2vw, 36px);
+  background: rgba( 255, 255, 255, 0.9);
+}
+
+#reloadButton:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   TextAlive用
+========================= */
+#overlay.disabled { display: none;}
+
+#media {display: none;}
+
+#lyrics {display: none;}
+
+#text {display: none;}
+
+#bar {display: none;}
+
+#seekbar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 90;
+}
+
+#seek {
+  width: 0%;
+  height: 100%;
+  background: #66ddff;
+}
