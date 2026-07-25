@@ -436,9 +436,9 @@ function updateBackground(position) {
   }
   backgroundState = nextState;
   if (nextState ==="chorus" ) {
-    bg.style.backgroundImage = 'url("./images/背景_2.png")';
+    bg.style.backgroundImage = 'url("../images/背景_2.png")';
   } else {
-    bg.style.backgroundImage = 'url("./images/背景_1.png")';
+    bg.style.backgroundImage = 'url("../images/背景_1.png")';
   }
 }
 
@@ -451,10 +451,10 @@ function endPerformance() {
     hitPoints = [];
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     mikuRin.style.display = "none";
-    bg.style.backgroundImage = 'url("./images/ミク・リン.png")';
+    bg.style.backgroundImage = 'url("../images/ミク・リン.png")';
     bg.style.backgroundSize = "contain";    
   }
-  else bg.style.backgroundImage = 'url("./images/背景_3.png")';
+  else bg.style.backgroundImage = 'url("../images/背景_3.png")';
   const resultCount = document.getElementById("resultCount");
   resultCount.textContent = shotCount + "枚";
   document.getElementById("endScreen").style.display = "flex"; 
@@ -525,7 +525,7 @@ function resetGame() {
   heart.style.display = "none";
   mikuRin.style.display = "none";
   backgroundState = "";
-  bg.style.backgroundImage = 'url("./images/背景_1.png")';
+  bg.style.backgroundImage = 'url("../images/背景_1.png")';
   document.getElementById("endScreen").style.display = "none";
   cameraX = window.innerWidth / 30;
   cameraY = window.innerHeight / 30;
